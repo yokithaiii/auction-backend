@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LotController;
 use App\Http\Controllers\Ping\PingController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     Route::get('/ping', [PingController::class, 'ping']);
+
+    Route::prefix('lots')->group(function () {
+        Route::get('/', [LotController::class, 'index']);
+        Route::post('/', [LotController::class, 'store']);
+        Route::put('/{id}', [LotController::class, 'update']);
+        Route::delete('/{id}', [LotController::class, 'destroy']);
+    });
 });
