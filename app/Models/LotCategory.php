@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class LotCategory extends Model
 {
@@ -11,7 +12,7 @@ class LotCategory extends Model
 
     protected $table = 'lot_categories';
 
-    protected static function boot()
+    protected static function boot(): void
     {
         parent::boot();
 
@@ -21,7 +22,7 @@ class LotCategory extends Model
         });
     }
 
-    public function lot()
+    public function lot(): HasOne
     {
         return $this->hasOne(Lot::class, 'lot_id', 'id');
     }

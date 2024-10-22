@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
+/**
+ * @property mixed $seller_id
+ * @property mixed $title
+ * @property mixed $description
+ * @property mixed $price
+ * @property mixed $quantity
+ * @property mixed $start_date
+ * @property mixed $end_date
+ * @property mixed $category_id
+ */
 class Lot extends Model
 {
     use HasUuids;
