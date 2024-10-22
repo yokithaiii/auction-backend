@@ -41,9 +41,14 @@ class Lot extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
+    public function seller()
+    {
+        return $this->belongsTo(Seller::class, 'seller_id', 'id');
+    }
+
     public function category(): BelongsTo
     {
-        return $this->belongsTo(LotCategory::class, 'lot_id', 'id');
+        return $this->belongsTo(LotCategory::class, 'category_id', 'id');
     }
 
     public function images(): HasMany
