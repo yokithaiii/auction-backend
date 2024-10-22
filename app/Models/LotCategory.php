@@ -17,7 +17,7 @@ class LotCategory extends Model
 
         static::creating(function ($model) {
             $slug = transliterate($model->name);
-            $model->slug = mb_strtolower($slug);
+            $model->slug = $slug;
         });
     }
 
